@@ -98,7 +98,7 @@ python3 inference.py "Generate descriptions for 30 test cases of the viability o
 
 If you actually want to generate the SQL code: 
 ```bash
-type &app.txt > out.txt
+type app.txt > out.txt
 python3 inference.py  out.txt --seq_len 1000 --temperature 0.3 --filter_thres 0.9 --model "palm_1b_8k_v0" 
 ```
 
