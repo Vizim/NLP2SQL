@@ -1,0 +1,141 @@
+*$
+
+Prompts:
+"Generate descriptions for 30 test case the viablity of a birthday as a date within a SQL data base, seprated by new line charcters, make sure to add decriptions to what each test do not make them unit tests make them logical checks."
+
+"Now normalize the language in each of these prompts so there is no sentiment to them, output them seperated by newline charcters.
+1. The birthday must be in the format "YYYY-MM-DD" to be stored in a SQL database.
+2. The birthday year should be within the range of 1900 to 9999 to be stored in a SQL database.
+3. The birthday must not be a future date to be stored in a SQL database.
+4. The birthday should not be an invalid date, such as February 30th or April 31st, to be stored in a SQL database.
+5. The birthday must be a valid date that can be converted to a date data type in SQL to be stored in a SQL database.
+6. The birthday must be a date that is supported by the specific SQL database being used.
+7. The birthday should not be earlier than the earliest possible date that can be stored in the SQL database being used.
+8. The birthday should not be later than the latest possible date that can be stored in the SQL database being used.
+9. The birthday must be a complete date with a year, month, and day to be stored in a SQL database.
+10. The birthday should not be a date with a time component to be stored as a date data type in a SQL database.
+11. The birthday should not be a string or text value to be stored as a date data type in a SQL database.
+12. The birthday should not be null or empty to be stored as a date data type in a SQL database.
+13. The birthday should not be a negative number to be stored as a date data type in a SQL database.
+14. The birthday year should not be less than 1900 to be stored in a SQL database.
+15. The birthday year should not be greater than 9999 to be stored in a SQL database.
+16. The birthday month should be within the range of 1 to 12 to be stored in a SQL database.
+17. The birthday day should be within the range of 1 to 31 to be stored in a SQL database.
+18. The birthday day should not be greater than the number of days in the month to be stored in a SQL database.
+19. The birthday month should not be 0 to be stored in a SQL database.
+20. The birthday day should not be 0 to be stored in a SQL database.
+21. The birthday should be a valid calendar date to be stored in a SQL database.
+22. The birthday should be a date that is meaningful and relevant to the data being stored in the SQL database.
+23. The birthday should not be a date that conflicts with any other data being stored in the SQL database.
+24. The birthday should be stored consistently with the data type and format used for other dates in the SQL database.
+25. The birthday should be stored in a column that is appropriately sized to accommodate the date data type being used.
+26. The birthday should be stored in a column that is appropriately indexed for efficient querying and retrieval of data.
+27. The birthday should be stored in a column with appropriate constraints to ensure data integrity and consistency.
+28. The birthday should be stored with appropriate precision to maintain accuracy and avoid rounding errors.
+29. The birthday should be stored with appropriate time zone information if applicable to the data being stored in the SQL database.
+30. The birthday should be stored with appropriate formatting for display purposes, if necessary, in the SQL database.
+"
+
+*$
+
+python3 inference.py """
+Now normalize the language in each of these prompts so there is no sentiment to them, output them seperated by newline charcters:
+
+1. The birthday must be in the format "YYYY-MM-DD" to be stored in a SQL database.
+2. The birthday year should be within the range of 1900 to 9999 to be stored in a SQL database.
+3. The birthday must not be a future date to be stored in a SQL database.
+4. The birthday should not be an invalid date, such as February 30th or April 31st, to be stored in a SQL database.
+5. The birthday must be a valid date that can be converted to a date data type in SQL to be stored in a SQL database.
+6. The birthday must be a date that is supported by the specific SQL database being used.
+7. The birthday should not be earlier than the earliest possible date that can be stored in the SQL database being used.
+8. The birthday should not be later than the latest possible date that can be stored in the SQL database being used.
+9. The birthday must be a complete date with a year, month, and day to be stored in a SQL database.
+10. The birthday should not be a date with a time component to be stored as a date data type in a SQL database.
+11. The birthday should not be a string or text value to be stored as a date data type in a SQL database.
+12. The birthday should not be null or empty to be stored as a date data type in a SQL database.
+13. The birthday should not be a negative number to be stored as a date data type in a SQL database.
+14. The birthday year should not be less than 1900 to be stored in a SQL database.
+15. The birthday year should not be greater than 9999 to be stored in a SQL database.
+16. The birthday month should be within the range of 1 to 12 to be stored in a SQL database.
+17. The birthday day should be within the range of 1 to 31 to be stored in a SQL database.
+18. The birthday day should not be greater than the number of days in the month to be stored in a SQL database.
+19. The birthday month should not be 0 to be stored in a SQL database.
+20. The birthday day should not be 0 to be stored in a SQL database.
+21. The birthday should be a valid calendar date to be stored in a SQL database.
+22. The birthday should be a date that is meaningful and relevant to the data being stored in the SQL database.
+23. The birthday should not be a date that conflicts with any other data being stored in the SQL database.
+24. The birthday should be stored consistently with the data type and format used for other dates in the SQL database.
+25. The birthday should be stored in a column that is appropriately sized to accommodate the date data type being used.
+26. The birthday should be stored in a column that is appropriately indexed for efficient querying and retrieval of data.
+27. The birthday should be stored in a column with appropriate constraints to ensure data integrity and consistency.
+28. The birthday should be stored with appropriate precision to maintain accuracy and avoid rounding errors.
+29. The birthday should be stored with appropriate time zone information if applicable to the data being stored in the SQL database.
+30. The birthday should be stored with appropriate formatting for display purposes, if necessary, in the SQL database. """ --seq_len 1000 --temperature 0 --filter_thres 0.8 --model "palm_410m_8k_v0"
+
+
+"Generate ANSI SQL code that corresponds to the following decriptions:
+
+1. The birthday must be in the format "YYYY-MM-DD" to be stored in a SQL database.
+2. The birthday year should be within the range of 1900 to 9999 to be stored in a SQL database.
+3. The birthday must not be a future date to be stored in a SQL database.
+4. The birthday should not be an invalid date, such as February 30th or April 31st, to be stored in a SQL database.
+5. The birthday must be a valid date that can be converted to a date data type in SQL to be stored in a SQL database.
+6. The birthday must be a date that is supported by the specific SQL database being used.
+7. The birthday should not be earlier than the earliest possible date that can be stored in the SQL database being used.
+8. The birthday should not be later than the latest possible date that can be stored in the SQL database being used.
+9. The birthday must be a complete date with a year, month, and day to be stored in a SQL database.
+10. The birthday should not be a date with a time component to be stored as a date data type in a SQL database.
+11. The birthday should not be a string or text value to be stored as a date data type in a SQL database.
+12. The birthday should not be null or empty to be stored as a date data type in a SQL database.
+13. The birthday should not be a negative number to be stored as a date data type in a SQL database.
+14. The birthday year should not be less than 1900 to be stored in a SQL database.
+15. The birthday year should not be greater than 9999 to be stored in a SQL database.
+16. The birthday month should be within the range of 1 to 12 to be stored in a SQL database.
+17. The birthday day should be within the range of 1 to 31 to be stored in a SQL database.
+18. The birthday day should not be greater than the number of days in the month to be stored in a SQL database.
+19. The birthday month should not be 0 to be stored in a SQL database.
+20. The birthday day should not be 0 to be stored in a SQL database.
+21. The birthday should be a valid calendar date to be stored in a SQL database.
+22. The birthday should be a date that is meaningful and relevant to the data being stored in the SQL database.
+23. The birthday should not be a date that conflicts with any other data being stored in the SQL database.
+24. The birthday should be stored consistently with the data type and format used for other dates in the SQL database.
+25. The birthday should be stored in a column that is appropriately sized to accommodate the date data type being used.
+26. The birthday should be stored in a column that is appropriately indexed for efficient querying and retrieval of data.
+27. The birthday should be stored in a column with appropriate constraints to ensure data integrity and consistency.
+28. The birthday should be stored with appropriate precision to maintain accuracy and avoid rounding errors.
+29. The birthday should be stored with appropriate time zone information if applicable to the data being stored in the SQL database.
+30. The birthday should be stored with appropriate formatting for display purposes, if necessary, in the SQL database. "
+
+python3 inference.py """
+Generate ANSI SQL code that corresponds to the following decriptions, make the output a 0 if the test case passes and 1 if the test fails, seperate each case with newline charcters:
+1. The birthday must be in the format YYYY-MM-DD to be stored in a SQL database.
+2. The birthday year should be within the range of 1900 to 9999 to be stored in a SQL database.
+3. The birthday must not be a future date to be stored in a SQL database.
+4. The birthday should not be an invalid date, such as February 30th or April 31st, to be stored in a SQL database.
+5. The birthday must be a valid date that can be converted to a date data type in SQL to be stored in a SQL database.
+6. The birthday must be a date that is supported by the specific SQL database being used.
+7. The birthday should not be earlier than the earliest possible date that can be stored in the SQL database being used.
+8. The birthday should not be later than the latest possible date that can be stored in the SQL database being used.
+9. The birthday must be a complete date with a year, month, and day to be stored in a SQL database.
+10. The birthday should not be a date with a time component to be stored as a date data type in a SQL database.
+11. The birthday should not be a string or text value to be stored as a date data type in a SQL database.
+12. The birthday should not be null or empty to be stored as a date data type in a SQL database.
+13. The birthday should not be a negative number to be stored as a date data type in a SQL database.
+14. The birthday year should not be less than 1900 to be stored in a SQL database.
+15. The birthday year should not be greater than 9999 to be stored in a SQL database.
+16. The birthday month should be within the range of 1 to 12 to be stored in a SQL database.
+17. The birthday day should be within the range of 1 to 31 to be stored in a SQL database.
+18. The birthday day should not be greater than the number of days in the month to be stored in a SQL database.
+19. The birthday month should not be 0 to be stored in a SQL database.
+20. The birthday day should not be 0 to be stored in a SQL database.
+21. The birthday should be a valid calendar date to be stored in a SQL database.
+22. The birthday should be a date that is meaningful and relevant to the data being stored in the SQL database.
+23. The birthday should not be a date that conflicts with any other data being stored in the SQL database.
+24. The birthday should be stored consistently with the data type and format used for other dates in the SQL database.
+25. The birthday should be stored in a column that is appropriately sized to accommodate the date data type being used.
+26. The birthday should be stored in a column that is appropriately indexed for efficient querying and retrieval of data.
+27. The birthday should be stored in a column with appropriate constraints to ensure data integrity and consistency.
+28. The birthday should be stored with appropriate precision to maintain accuracy and avoid rounding errors.
+29. The birthday should be stored with appropriate time zone information if applicable to the data being stored in the SQL database.
+30. The birthday should be stored with appropriate formatting for display purposes, if necessary, in the SQL database.  The birthday should be stored with appropriate formatting for display purposes, if necessary, in the SQL database. 
+""" --seq_len 10000 --temperature 0.5 --filter_thres 0.8 --model "palm_2b_8k_v0"
