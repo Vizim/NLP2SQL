@@ -89,12 +89,16 @@ I typically use something like this:
 ```
 
 ```python
-python3 inference.py "Your Test Prompt" --seq_len 1000 --temperature 0.5 --filter_thres 0.6 --model "palm_410m_8k_v0" | tee out.txt
+cd PaLM
+python3 inference.py "Your Test Prompt" --seq_len 1000 --temperature 0.8 --filter_thres 0.9 --model "palm_410m_8k_v0" | tee out.txt
+```
+```
+python3 inference.py "Generate descriptions for 30 test cases of the viability of a birthday as a date within a SQL database, separated by new line characters (\n), make sure to add descriptions to what each test do not make them unit tests make them logical checks." --seq_len 350 --temperature 0.8 --filter_thres 0.9 --model "palm_1b_8k_v0" | tee out.txt
 ```
 
 If you actually want to generate the SQL code: 
 ```bash
-type out.txt >> &app.txt
+type &app.txt > out.txt
 python3 inference.py  out.txt --seq_len 1000 --temperature 0.3 --filter_thres 0.9 --model "palm_1b_8k_v0" 
 ```
 
