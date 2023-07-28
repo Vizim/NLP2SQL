@@ -93,8 +93,9 @@ python3 inference.py "Your Test Prompt" --seq_len 1000 --temperature 0.5 --filte
 ```
 
 If you actually want to generate the SQL code: 
-```python
-python3 inference.py out.txt --seq_len 1000 --temperature 0.3 --filter_thres 0.9 --model "palm_1b_8k_v0" 
+```bash
+type out.txt >> &app.txt
+python3 inference.py  out.txt --seq_len 1000 --temperature 0.3 --filter_thres 0.9 --model "palm_1b_8k_v0" 
 ```
 
 
