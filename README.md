@@ -79,9 +79,6 @@ Training Information Related to the 4 Google paLM models:
 | 1 B | 50304 | 2048 | 16 | 128 | 8 | True | 3e-4 |
 | 2.1 B | 50304 | 2560 | 24 | 128 | 8 | True | 1.8e-4 |
 
-
-
-
 ## Run:
 If you want to generate the prompts/test cases automatically: 
 
@@ -92,12 +89,12 @@ I typically use something like this:
 ```
 
 ```python
-python3 inference.py "Your Test Prompt" --seq_len 1000 --temperature 0.5 --filter_thres 0.6 --model "palm_410m_8k_v0"
+python3 inference.py "Your Test Prompt" --seq_len 1000 --temperature 0.5 --filter_thres 0.6 --model "palm_410m_8k_v0" | tee out.txt
 ```
 
 If you actually want to generate the SQL code: 
 ```python
-python3 inference.py "" --seq_len 1000 --temperature 0.5 --filter_thres 0.6 --model "palm_410m_8k_v0"
+python3 inference.py out.txt --seq_len 1000 --temperature 0.3 --filter_thres 0.9 --model "palm_1b_8k_v0" 
 ```
 
 
