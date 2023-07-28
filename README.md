@@ -18,35 +18,37 @@ This is a project I made as a proof of concept that proves that it's very much p
 | 11. The birthday should not be a string   or text value to be stored as a date data type in a SQL database.                  	| 11. The birthday should not be a string   or text value to be stored as a date data type in a SQL database.                  	| SELECT   CASE WHEN TRY_CONVERT(date, birthday) IS NOT NULL THEN 0 ELSE 1 END AS   date_check      FROM table_name;                                                                             	|
 ## Training Data / Tools
  * Glove 6B (Stanford University)
- * W3 Schools SQL Tutorials
- * Google PaLM API
- * Google PaLM pre-trained
+ * WikiSQL data set & Model
+ * Google PaLM open source
+ * Google PaLM pre-trained via maker
 ## Dependencies: 
 * torch:
   - PyTorch is a Python package that provides two high-level features:
 Tensor computation (like NumPy) with strong GPU acceleration.
 Deep neural networks built on a tape-based autograd system.
-
 * palm-rlhf-pytorch: 
   - Implementation of RLHF (Reinforcement Learning with Human Feedback) on top of the PaLM architecture. Basically ChatGPT but with PaLM
-
 * transformers
   - Provides state-of-the-art general-purpose architectures (BERT, GPT-2, RoBERTa, XLM, DistilBert, XLNet, CTRL...) for Natural Language Understanding (NLU) and Natural Language Generation (NLG) with over 32+ pretrained models in 100+ languages and deep interoperability between TensorFlow 2.0 and PyTorch.
-
 * tokenizers
   - Tokenization is used in natural language processing to split paragraphs and sentences into smaller units that can be more easily assigned meaning. Tokinzers provides implementations of the most used tokens today.
-  
 * hidet
   - An open-source efficient deep learning framework/compiler, written in python.
-
 * datasets
    - Online loaders for public data sets
    - Efficient data pre-processing essentially let us chunk the data if it is chunked in memory correctly it makes training faster and supports formats like CSV, JSON, text, png, jpeg, wav, mp3, parquet
-
+* tqdm
+  -Easy-to-use progress bar implementation
+* records
+  - Records is a very simple, but powerful, library for making raw SQL queries to most relational databases.
+* babel
+  - A collection of tools for internationalizing Python applications.
+* tabulate
+  - Pretty-print tabular data in Python, a library, and a command-line utility.
 * wandb
   - Allows you to store hyper-parameters while using them in your training run. Also allows you to visualize your hyper-parameters a lot better. 
 * TensorFlow 2
-  - This has so many features but typically tensorflow provides n-dimensional matrix manipulation and data flow graphs. 
+  - This has so many features but typically provides n-dimensional matrix manipulation and data flow graphs. 
 * Numpy
   - Tensor computation and a lot of math/stat resources.
 * Keras
@@ -61,12 +63,14 @@ First, install all of the above libraries.
 
 ```bash
 git clone https://github.com/Viz/NLP2SQL
-cd NLP2SQL/PaLM
-pip3 -r requirements.txt
+cd NLP2SQL
+pip3 install -r reqs.txt
+cd WikiSQL
+tar xvjf data.tar.bz2
 ```
 
 ## Train: 
-So we need to actually train the larger model on SQL code 
+Training Information Related to the 4 Google paLM models:
 
 | Model Size | Num Tokens | Dim | Depth | Dim Head | Heads | Flash Attention | Learning Rate |
 | -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
@@ -79,9 +83,24 @@ So we need to actually train the larger model on SQL code
 
 
 ## Run:
+If you want to generate the prompts/test cases automatically: 
+
+I typically use something like this:
+
+```bash
+"Generate descriptions for 30 test cases of the viability of a birthday as a date within a SQL database, separated by new line characters (\n), make sure to add descriptions to what each test do not make them unit tests make them logical checks."
+```
+
 ```python
 python3 inference.py "Your Test Prompt" --seq_len 1000 --temperature 0.5 --filter_thres 0.6 --model "palm_410m_8k_v0"
 ```
+
+If you actually want to generate the SQL code: 
+```python
+python3 inference.py "" --seq_len 1000 --temperature 0.5 --filter_thres 0.6 --model "palm_410m_8k_v0"
+```
+
+
 
 
 ## Citations 
