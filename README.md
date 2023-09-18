@@ -1,5 +1,5 @@
 # NLP2SQL
-This is a project I made as a proof of concept that proves that it's very much possible to use natural language processing AI to generate various SQL codes to test the quality of data in a large-scale database. This project was also done over the course of 2 months and is still in its very early stages...
+This is a project I made as a proof of concept that proves that it's very much possible to use NLP AI to generate various SQL codes to test the quality of data in a large-scale database. This project was also done over the course of 2 months and is still in its very early stages...
 
 # Example Outs
 
